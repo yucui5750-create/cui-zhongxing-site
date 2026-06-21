@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+.vercel/
+
+work/
+outputs/
+
+*.log
+.env*
+
+.vercel
