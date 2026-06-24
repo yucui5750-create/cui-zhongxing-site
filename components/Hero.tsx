@@ -1,4 +1,5 @@
-import { ArrowRight, Mail } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, BookOpenText, Mail } from "lucide-react";
 import { AvatarPhoto } from "@/components/AvatarPhoto";
 import { FadeIn } from "@/components/FadeIn";
 import { profile } from "@/src/data/profile";
@@ -15,33 +16,43 @@ export function Hero() {
           <p className="mx-auto mb-5 max-w-xs break-words text-xs font-semibold uppercase tracking-[0.18em] text-graphite/50 sm:max-w-none sm:text-sm sm:tracking-[0.28em]">
             {profile.role}
           </p>
-          <h1 className="text-6xl font-semibold tracking-normal text-ink sm:text-7xl lg:text-8xl">
-            {profile.name}
-          </h1>
-          <p className="mt-3 text-2xl font-medium text-graphite/60 sm:text-3xl">
-            {profile.englishName}
+          <p className="text-2xl font-medium text-graphite/60 sm:text-3xl">
+            {profile.name} · {profile.englishName}
           </p>
-          <p className="mt-9 break-words text-2xl font-semibold leading-tight text-graphite sm:text-4xl lg:text-5xl">
+          <h1 className="mt-7 break-words text-4xl font-semibold leading-tight tracking-normal text-ink sm:text-6xl lg:text-7xl">
             {profile.hero.headline}
-          </p>
-          <p className="mx-auto mt-7 max-w-2xl text-base leading-8 text-graphite/60 sm:text-lg lg:mx-0">
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-lg font-medium leading-8 text-graphite/70 sm:text-xl lg:mx-0">
             {profile.hero.subheadline}
           </p>
-          <div className="mx-auto mt-10 flex w-full max-w-md min-w-0 flex-col justify-center gap-4 sm:max-w-none sm:flex-row lg:mx-0 lg:justify-start">
-            <a
-              href="#projects"
+          <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-graphite/60 sm:text-lg lg:mx-0">
+            {profile.hero.description}
+          </p>
+          <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-graphite/48 sm:text-base lg:mx-0">
+            {profile.hero.englishDescription}
+          </p>
+          <div className="mx-auto mt-10 flex w-full max-w-md min-w-0 flex-col justify-center gap-4 sm:max-w-none sm:flex-row sm:flex-wrap lg:mx-0 lg:justify-start">
+            <Link
+              href="/projects"
               className="inline-flex w-full min-w-0 items-center justify-center gap-2 rounded-full bg-ink px-5 py-4 text-center text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-graphite sm:w-auto sm:px-7"
             >
               {profile.hero.primaryCta}
               <ArrowRight size={18} className="shrink-0" />
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              href="/contact"
               className="inline-flex w-full min-w-0 items-center justify-center gap-2 rounded-full border border-black/10 bg-white/72 px-5 py-4 text-center text-sm font-semibold text-graphite shadow-soft backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white sm:w-auto sm:px-7"
             >
               {profile.hero.secondaryCta}
               <Mail size={18} className="shrink-0" />
-            </a>
+            </Link>
+            <Link
+              href="/blog"
+              className="inline-flex w-full min-w-0 items-center justify-center gap-2 rounded-full border border-black/10 bg-white/50 px-5 py-4 text-center text-sm font-semibold text-graphite shadow-soft backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white sm:w-auto sm:px-7"
+            >
+              {profile.hero.blogCta}
+              <BookOpenText size={18} className="shrink-0" />
+            </Link>
           </div>
         </FadeIn>
 
